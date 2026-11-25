@@ -1,0 +1,28 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=${N8N_HOST:-localhost}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
+      - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678/}
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE:-America/Sao_Paulo}
+      - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY:-troque-esta-chave-com-32-chars-min}
+      - LLM_BASE_URL=${LLM_BASE_URL:-https://opencode.ai/inference/go/openai/v1}
+      - LLM_API_KEY=${LLM_API_KEY:-}
+      - LLM_MODEL=${LLM_MODEL:-mimo-v2.6-flash}
+      - LLM_MODEL_REDACAO=${LLM_MODEL_REDACAO:-claude-haiku-5-5}
+      - LLM_MODEL_TRANSCRICAO=${LLM_MODEL_TRANSCRICAO:-mimo-v2.6-flash}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./workflows:/home/node/workflows
+    env_file:
+      - .env
+
+volumes:
+  n8n_data:

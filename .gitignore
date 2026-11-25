@@ -1,0 +1,25 @@
+# Segredos locais — nunca commitar
+n8n/.env
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+transcricao/
+cortes/
+
+# Midia temporaria
+*.mp3
+*.wav
+*.mp4
+*.mov
+!conteudo/**/*.png
+
+# Sistema
+Thumbs.db
+Desktop.ini
+.DS_Store

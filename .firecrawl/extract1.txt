@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+================================================================================
+FILE q1
+--- URL: https://www.youtube.com/watch?v=1JQNnN4865k
+TITLE: TendÛncias para 2026 e 2027 no mercado de casamentos!
+MD_LEN: 6039
+  File "<string>", line 12, in <module>
+    print(md[:4000])
+    ~~~~~^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3a5' in position 608: character maps to <undefined>
